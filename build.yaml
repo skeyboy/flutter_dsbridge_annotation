@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      flutter_dsbridge_annotation|wrap_builder:
+        enabled: true
+
+builders:
+  wrap_builder:
+    target: ":flutter_dsbridge_annotation"
+    import: "package:flutter_dsbridge_annotation/src/builder/ds_bridge_builder.dart"
+    builder_factories: ["dsBridgeBuilder"]
+    build_extensions: { ".dart": [".js.dart"] }
+    auto_apply: dependents
+    build_to: source
