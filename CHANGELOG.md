@@ -1,3 +1,8 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* dsbridge auto export interface to JavaScript
+  
+## 0.0.2
+
+* improve code generator
+* fixe some warnning

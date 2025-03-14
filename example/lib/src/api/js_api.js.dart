@@ -8,7 +8,6 @@ part of 'js_api.dart';
 // **************************************************************************
 
 // Generated wrapper class for JsApi
-
 class JsApiWrapper extends JavaScriptNamespaceInterface {
   late final JsApi _wrappedInstance = JsApi();
   JsApi get jsapi => _wrappedInstance;
@@ -70,6 +69,7 @@ class JsApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   void debugPrint(Object? object) {
+    // ignore: avoid_print
     print(object);
   }
 }

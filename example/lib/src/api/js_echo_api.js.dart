@@ -8,7 +8,6 @@ part of 'js_echo_api.dart';
 // **************************************************************************
 
 // Generated wrapper class for JsEchoApi
-
 class JsEchoApiWrapper extends JavaScriptNamespaceInterface {
   late final JsEchoApi _wrappedInstance = JsEchoApi();
   JsEchoApi get jsechoapi => _wrappedInstance;
@@ -37,6 +36,7 @@ class JsEchoApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   void debugPrint(Object? object) {
+    // ignore: avoid_print
     print(object);
   }
 }
