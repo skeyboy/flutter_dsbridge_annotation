@@ -69,7 +69,73 @@ class JsApi {
 }
 ```
 
+Inject the JSObject into webView
+```dart
+    final DWebViewController controller =
+        DWebViewController.fromPlatformCreationParams(params);
+    // #enddocregion platform_features
+
+    controller
+      ..setBackgroundColor(Colors.white)
+      ..loadFlutterAsset('assets/js-call-dart.html')
+      ..addJavaScriptObject(JsApiWrapper())
+      ..addJavaScriptObject(JsEchoApiWrapper(), namespace: 'echo')
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (progress) {
+            print('process=$progress');
+          },
+          onPageStarted: (url) {
+            print('url onPageStarted');
+          },
+          onPageFinished: (url) {
+            print('url onPageFinished');
+          },
+        ),
+      );
+```
+
 this will export an object as the bridge between JS and Native, then you can get JS callback (sync or async) by this bridge
+
+So you can simple call item as follow case:
+```dart
+FilledButton(
+                child: const Text('addValue(3,4)'),
+                onPressed: () {
+                  _controller.callHandler(
+                    'addValue',
+                    args: [3, 4],
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
+                },
+              ),
+              FilledButton(
+                child: const Text("append('I','love','you')"),
+                onPressed: () {
+                  _controller.callHandler(
+                    'append',
+                    args: ["I", "love", "you"],
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
+                },
+              ),
+```
+
+and the equal js as are these:
+```javascript
+ dsBridge.register('addValue', function (r, l) {
+        return r + l;
+    })
+
+    dsBridge.registerAsyn('append', function (arg1, arg2, arg3, responseCallback) {
+        responseCallback(arg1 + " " + arg2 + " " + arg3);
+    })
+```
+more examples are in the example demo . you can download to enjoy it.
 
 ## Finally
 

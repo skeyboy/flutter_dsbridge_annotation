@@ -10,4 +10,3 @@ class dsBridge {
   final String? as;
   const dsBridge({this.async = false, this.as});
 }
-

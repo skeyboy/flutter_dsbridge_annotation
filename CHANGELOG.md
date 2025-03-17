@@ -6,3 +6,8 @@
 
 * improve code generator
 * fixe some warnning
+
+## 0.0.3
+
+* improve code generator
+* more example case

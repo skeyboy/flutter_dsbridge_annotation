@@ -46,9 +46,7 @@ class _DartCallJsPageState extends State<DartCallJsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('Dart call JavaScript'),
-      ),
+      appBar: AppBar(title: const Text('Dart call JavaScript')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
@@ -58,61 +56,82 @@ class _DartCallJsPageState extends State<DartCallJsPage> {
               FilledButton(
                 child: const Text('addValue(3,4)'),
                 onPressed: () {
-                  _controller.callHandler('addValue', args: [3, 4],
-                      handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'addValue',
+                    args: [3, 4],
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
                 child: const Text("append('I','love','you')"),
                 onPressed: () {
-                  _controller.callHandler('append', args: ["I", "love", "you"],
-                      handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'append',
+                    args: ["I", "love", "you"],
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
                 child: const Text('startTimer()'),
                 onPressed: () {
-                  _controller.callHandler('startTimer', handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'startTimer',
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
                 child: const Text('syn.addValue(5,6)'),
                 onPressed: () {
-                  _controller.callHandler('syn.addValue', args: [5, 6],
-                      handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'syn.addValue',
+                    args: [5, 6],
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
                 child: const Text('syn.getInfo()'),
                 onPressed: () {
-                  _controller.callHandler('syn.getInfo', handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'syn.getInfo',
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
                 child: const Text('asyn.addValue(5,6)'),
                 onPressed: () {
-                  _controller.callHandler('asyn.addValue', args: [5, 6],
-                      handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'asyn.addValue',
+                    args: [5, 6],
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
                 child: const Text('asyn.getInfo()'),
                 onPressed: () {
-                  _controller.callHandler('asyn.getInfo', handler: (retValue) {
-                    Fluttertoast.showToast(msg: retValue.toString());
-                  });
+                  _controller.callHandler(
+                    'asyn.getInfo',
+                    handler: (retValue) {
+                      Fluttertoast.showToast(msg: retValue.toString());
+                    },
+                  );
                 },
               ),
               FilledButton(
@@ -150,7 +169,7 @@ class _DartCallJsPageState extends State<DartCallJsPage> {
               SizedBox(
                 height: 10,
                 child: DWebViewWidget(controller: _controller),
-              )
+              ),
             ],
           ),
         ),

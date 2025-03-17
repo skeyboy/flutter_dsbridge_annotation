@@ -17,5 +17,5 @@ abstract class CodeGenerator {
     Element element,
     ConstantReader annotation,
     BuildStep buildStep,
-  );
+  ) {}
 }
