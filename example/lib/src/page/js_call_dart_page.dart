@@ -40,8 +40,8 @@ class _JsCallDartPageState extends State<JsCallDartPage> {
     controller
       ..setBackgroundColor(Colors.white)
       ..loadFlutterAsset('assets/js-call-dart.html')
-      ..addJavaScriptObject(JsApiWrapper())
-      ..addJavaScriptObject(JsEchoApiWrapper(), namespace: 'echo')
+      ..addJavaScriptObject(JsApi())
+      ..addJavaScriptObject(JsEchoApi(), namespace: 'echo')
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (progress) {

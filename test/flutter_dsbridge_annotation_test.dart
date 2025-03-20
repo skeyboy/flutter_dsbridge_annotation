@@ -3,8 +3,11 @@ import 'test/foo.dart';
 
 void main() {
   final foo = Foo();
-  final fooWrapper = FooWrapper(foo);
-  test('inject foo instance', () {
-    assert(foo == fooWrapper.foo, "inject instance failed");
+  test('foo functions map', () {
+    assert(foo.functionMap.isNotEmpty, "foo functions shoud not empty");
+    assert(
+      foo.functionMap.keys.length == 4,
+      'we registe 4 tunctions ,functions count is 4',
+    );
   });
 }

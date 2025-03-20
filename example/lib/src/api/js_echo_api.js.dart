@@ -7,19 +7,19 @@ part of 'js_echo_api.dart';
 // DSBridgeGenerator
 // **************************************************************************
 
-// Generated wrapper class for JsEchoApi
-class JsEchoApiWrapper extends JavaScriptNamespaceInterface {
+// Generated _$JsEchoApi class for JsEchoApi
+class _$JsEchoApi extends JavaScriptNamespaceInterface {
   late final JsEchoApi _wrappedInstance = JsEchoApi();
   JsEchoApi get jsechoapi => _wrappedInstance;
 
   @override
   void register() {
-    registerFunction(syn, functionName: 'syn');
-    registerFunction(asyn, functionName: 'asyn');
+    registerFunction(_syn, functionName: 'syn');
+    registerFunction(_asyn, functionName: 'asyn');
   }
 
   @pragma('vm:entry-point')
-  dynamic syn(dynamic args) {
+  dynamic _syn(dynamic args) {
     debugPrint('Before calling syn with annotation: isAsync - false  as - syn');
     final result = _wrappedInstance.syn(args); // 调用被包装类的方法
     debugPrint('After calling syn');
@@ -27,7 +27,7 @@ class JsEchoApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  void asyn(dynamic args, CompletionHandler handler) {
+  void _asyn(dynamic args, CompletionHandler handler) {
     debugPrint(
       'Before calling asyn with annotation: isAsync - true  as - asyn',
     );

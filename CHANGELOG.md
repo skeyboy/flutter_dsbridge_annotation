@@ -11,3 +11,8 @@
 
 * improve code generator
 * more example case
+
+## 0.0.4
+
+* The change of inheritance relationship
+* Remove the wrapper extra class

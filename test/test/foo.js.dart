@@ -7,33 +7,21 @@ part of 'foo.dart';
 // DSBridgeGenerator
 // **************************************************************************
 
-void debugPrint(Object? object) {
-  print(object);
-}
-
-abstract class _$Foo extends JavaScriptNamespaceInterface {
-  @override
-  void register() {}
-}
-
-// Generated wrapper class for Foo
-
-class FooWrapper extends Foo {
-  final Foo _wrappedInstance;
+// Generated _$Foo class for Foo
+class _$Foo extends JavaScriptNamespaceInterface {
+  late final Foo _wrappedInstance = Foo();
   Foo get foo => _wrappedInstance;
-
-  FooWrapper(this._wrappedInstance);
 
   @override
   void register() {
-    registerFunction(Method1, functionName: 'Method1');
-    registerFunction(Method2, functionName: 'Method2');
-    registerFunction(testSyn, functionName: 'testSyn');
-    registerFunction(testAsyn, functionName: 'testAsyn');
+    registerFunction(_Method1, functionName: 'Method1');
+    registerFunction(_Method2, functionName: 'Method2');
+    registerFunction(_testSyn, functionName: 'testSyn');
+    registerFunction(_testAsyn, functionName: 'testAsyn');
   }
 
   @pragma('vm:entry-point')
-  void Method1() {
+  void _Method1() {
     debugPrint(
       'Before calling method1 with annotation: isAsync - false  as - Method1',
     );
@@ -42,7 +30,7 @@ class FooWrapper extends Foo {
   }
 
   @pragma('vm:entry-point')
-  void Method2(String param1, int param2) {
+  void _Method2(String param1, int param2) {
     debugPrint(
       'Before calling method2 with annotation: isAsync - false  as - Method2',
     );
@@ -51,8 +39,7 @@ class FooWrapper extends Foo {
   }
 
   @pragma('vm:entry-point')
-  @override
-  String testSyn(dynamic msg) {
+  String _testSyn(dynamic msg) {
     debugPrint(
       'Before calling testSyn with annotation: isAsync - false  as - testSyn',
     );
@@ -62,12 +49,16 @@ class FooWrapper extends Foo {
   }
 
   @pragma('vm:entry-point')
-  @override
-  void testAsyn(dynamic msg, CompletionHandler handler) {
+  void _testAsyn(dynamic msg, CompletionHandler handler) {
     debugPrint(
       'Before calling testAsyn with annotation: isAsync - false  as - testAsyn',
     );
     _wrappedInstance.testAsyn(msg, handler); // 调用被包装类的方法
     debugPrint('After calling testAsyn');
+  }
+
+  void debugPrint(Object? object) {
+    // ignore: avoid_print
+    print(object);
   }
 }

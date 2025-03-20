@@ -7,22 +7,22 @@ part of 'js_api.dart';
 // DSBridgeGenerator
 // **************************************************************************
 
-// Generated wrapper class for JsApi
-class JsApiWrapper extends JavaScriptNamespaceInterface {
+// Generated _$JsApi class for JsApi
+class _$JsApi extends JavaScriptNamespaceInterface {
   late final JsApi _wrappedInstance = JsApi();
   JsApi get jsapi => _wrappedInstance;
 
   @override
   void register() {
-    registerFunction(testSyn, functionName: 'testSyn');
-    registerFunction(testAsyn, functionName: 'testAsyn');
-    registerFunction(testNoArgSyn, functionName: 'testNoArgSyn');
-    registerFunction(testNoArgAsyn, functionName: 'testNoArgAsyn');
-    registerFunction(callProgress, functionName: 'callProgress');
+    registerFunction(_testSyn, functionName: 'testSyn');
+    registerFunction(_testAsyn, functionName: 'testAsyn');
+    registerFunction(_testNoArgSyn, functionName: 'testNoArgSyn');
+    registerFunction(_testNoArgAsyn, functionName: 'testNoArgAsyn');
+    registerFunction(_callProgress, functionName: 'callProgress');
   }
 
   @pragma('vm:entry-point')
-  String testSyn(dynamic msg) {
+  String _testSyn(dynamic msg) {
     debugPrint(
       'Before calling testSyn with annotation: isAsync - false  as - testSyn',
     );
@@ -32,7 +32,7 @@ class JsApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  void testAsyn(dynamic msg, CompletionHandler handler) {
+  void _testAsyn(dynamic msg, CompletionHandler handler) {
     debugPrint(
       'Before calling testAsyn with annotation: isAsync - true  as - testAsyn',
     );
@@ -41,7 +41,7 @@ class JsApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  String testNoArgSyn(dynamic arg) {
+  String _testNoArgSyn(dynamic arg) {
     debugPrint(
       'Before calling testNoArgSyn with annotation: isAsync - false  as - testNoArgSyn',
     );
@@ -51,7 +51,7 @@ class JsApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  void testNoArgAsyn(dynamic arg, CompletionHandler handler) {
+  void _testNoArgAsyn(dynamic arg, CompletionHandler handler) {
     debugPrint(
       'Before calling testNoArgAsyn with annotation: isAsync - true  as - testNoArgAsyn',
     );
@@ -60,7 +60,7 @@ class JsApiWrapper extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  void callProgress(dynamic args, CompletionHandler handler) {
+  void _callProgress(dynamic args, CompletionHandler handler) {
     debugPrint(
       'Before calling callProgress with annotation: isAsync - true  as - callProgress',
     );

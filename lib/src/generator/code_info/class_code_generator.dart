@@ -54,8 +54,8 @@ class ClassCodeGenerator extends CodeGenerator {
   @override
   String toString() {
     return '''
-// Generated wrapper class for $className
-class ${className}Wrapper extends JavaScriptNamespaceInterface {
+// Generated _\$${className} class for $className
+class _\$${className} extends JavaScriptNamespaceInterface {
   late final $className _wrappedInstance = $className();
   $className get ${className.toLowerCase()} => _wrappedInstance;
 

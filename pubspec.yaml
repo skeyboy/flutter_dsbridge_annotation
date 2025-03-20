@@ -1,11 +1,11 @@
 name: flutter_dsbridge_annotation
 description: "A modern cross-platform JavaScript bridge annotation"
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/skeyboy/flutter_dsbridge_annotation
 
 environment:
   sdk: ">=3.7.0 <4.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=3.29.0"
 
 dependencies:
   analyzer: ^7.3.0

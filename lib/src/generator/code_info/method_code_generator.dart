@@ -15,7 +15,7 @@ class MethodCodeGenerator extends CodeGenerator {
   ) {}
 
   String get registerFunction =>
-      "registerFunction($asMethodName,functionName:'$asMethodName');";
+      "registerFunction(_$asMethodName,functionName:'$asMethodName');";
 
   MethodElement get method => originElement as MethodElement;
 
@@ -47,7 +47,7 @@ class MethodCodeGenerator extends CodeGenerator {
   String toString() {
     return '''
   @pragma('vm:entry-point')
-  $returnType $asMethodName(${parameters.join(', ')}) {
+  $returnType _$asMethodName(${parameters.join(', ')}) {
     debugPrint('Before calling $methodName with annotation: isAsync - $isAsync  as - $asMethodName');
     ${returnType == 'void' ? '' : 'final result ='} _wrappedInstance.$methodName(${method.parameters.map((p) => p.name).join(', ')}); // 调用被包装类的方法
     debugPrint('After calling $methodName');

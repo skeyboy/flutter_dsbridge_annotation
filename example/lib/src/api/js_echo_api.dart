@@ -1,10 +1,9 @@
-import 'package:dsbridge_flutter/dsbridge_flutter.dart';
 import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
 
 part 'js_echo_api.js.dart';
 
 @DSBridge(enableDebug: true)
-class JsEchoApi {
+class JsEchoApi extends _$JsEchoApi {
   @dsBridge()
   dynamic syn(dynamic args) {
     return args;

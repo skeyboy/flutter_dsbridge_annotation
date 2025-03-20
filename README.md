@@ -20,6 +20,16 @@ DSBridge for Flutter is based on Flutter official [webview_flutter](https://pub.
      flutter_dsbridge_annotation: x.y.z
    ```
 
+2. run builder
+
+  ```shell
+    flutter pub run build_runner watch --delete-conflicting-outputs
+    
+    or
+
+    flutter pub run build_runner build --delete-conflicting-outputs
+  ```
+
 ## Examples
 
 See the `example` package. run the `example` project and to see it in action.
@@ -32,7 +42,7 @@ export object as JavaScriptObject
 
 ```dart
 @DSBridge(enableDebug: true)
-class JsApi {
+class JsApi  extends _$JsApi {
   @dsBridge()
   String testSyn(dynamic msg) {
     print('msg=$msg');
@@ -70,6 +80,7 @@ class JsApi {
 ```
 
 Inject the JSObject into webView
+
 ```dart
     final DWebViewController controller =
         DWebViewController.fromPlatformCreationParams(params);
@@ -78,8 +89,8 @@ Inject the JSObject into webView
     controller
       ..setBackgroundColor(Colors.white)
       ..loadFlutterAsset('assets/js-call-dart.html')
-      ..addJavaScriptObject(JsApiWrapper())
-      ..addJavaScriptObject(JsEchoApiWrapper(), namespace: 'echo')
+      ..addJavaScriptObject(JsApi())
+      ..addJavaScriptObject(JsEchoApi(), namespace: 'echo')
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (progress) {
@@ -97,7 +108,10 @@ Inject the JSObject into webView
 
 this will export an object as the bridge between JS and Native, then you can get JS callback (sync or async) by this bridge
 
+use as this `addJavaScriptObject(JsApi())` to register the bridge, it is very important ！！！！
+
 So you can simple call item as follow case:
+
 ```dart
 FilledButton(
                 child: const Text('addValue(3,4)'),
@@ -126,6 +140,7 @@ FilledButton(
 ```
 
 and the equal js as are these:
+
 ```javascript
  dsBridge.register('addValue', function (r, l) {
         return r + l;
@@ -135,6 +150,7 @@ and the equal js as are these:
         responseCallback(arg1 + " " + arg2 + " " + arg3);
     })
 ```
+
 more examples are in the example demo . you can download to enjoy it.
 
 ## Finally
