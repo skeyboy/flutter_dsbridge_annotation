@@ -18,16 +18,25 @@ DSBridge for Flutter is based on Flutter official [webview_flutter](https://pub.
    dependencies:
      ...
      flutter_dsbridge_annotation: x.y.z
+     dsbridge_flutter: x.y.z
    ```
+  
+simple you can use this to add dependency:
+
+  ```dart
+
+  flutter pub add flutter_dsbridge_annotation dsbridge_flutter
+
+  ```
 
 2. run builder
 
   ```shell
-    flutter pub run build_runner watch --delete-conflicting-outputs
+    dart run build_runner watch --delete-conflicting-outputs
     
     or
 
-    flutter pub run build_runner build --delete-conflicting-outputs
+    dart run build_runner build --delete-conflicting-outputs
   ```
 
 ## Examples
@@ -41,6 +50,10 @@ To use flutter_dsbridge_annotation in your own project, just see the example.
 export object as JavaScriptObject
 
 ```dart
+
+import 'package:dsbridge_flutter/dsbridge_flutter.dart';
+import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
+
 @DSBridge(enableDebug: true)
 class JsApi  extends _$JsApi {
   @dsBridge()
@@ -109,6 +122,15 @@ Inject the JSObject into webView
 this will export an object as the bridge between JS and Native, then you can get JS callback (sync or async) by this bridge
 
 use as this `addJavaScriptObject(JsApi())` to register the bridge, it is very important ！！！！
+
+The other import is that: you need import header in the bridge file:
+
+```dart
+
+import 'package:dsbridge_flutter/dsbridge_flutter.dart';
+import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
+
+```
 
 So you can simple call item as follow case:
 

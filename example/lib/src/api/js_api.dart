@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:dsbridge_flutter/dsbridge_flutter.dart';
 import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
 
 part 'js_api.js.dart';

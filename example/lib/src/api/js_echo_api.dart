@@ -1,4 +1,5 @@
 import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
+import 'package:dsbridge_flutter/dsbridge_flutter.dart';
 
 part 'js_echo_api.js.dart';
 

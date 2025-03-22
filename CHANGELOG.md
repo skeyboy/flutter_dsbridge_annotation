@@ -16,3 +16,6 @@
 
 * The change of inheritance relationship
 * Remove the wrapper extra class
+
+## 0.0.5
+* fixe export cause `dart run build_runner build` error
