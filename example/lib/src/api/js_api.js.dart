@@ -60,7 +60,7 @@ class _$JsApi extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  void _callProgress(dynamic args, CompletionHandler handler) {
+  void _callProgress(String args, CompletionHandler handler) {
     debugPrint(
       'Before calling callProgress with annotation: isAsync - true  as - callProgress',
     );

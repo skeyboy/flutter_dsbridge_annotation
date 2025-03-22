@@ -1,4 +1,4 @@
-import 'package:dsbridge_flutter/dsbridge_flutter.dart';
+import 'package:flutter_dsbridge/flutter_dsbridge.dart';
 import 'package:example/src/api/js_echo_api.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -7,6 +7,12 @@ import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 // #enddocregion platform_imports
 
 import '../api/js_api.dart';
+
+@Deprecated('you can use DsWebViewController instead')
+typedef DWebViewController = DsWebViewController;
+
+@Deprecated('you can use DsWebViewWidget instead')
+typedef DWebViewWidget = DsWebViewWidget;
 
 class JsCallDartPage extends StatefulWidget {
   const JsCallDartPage({super.key});

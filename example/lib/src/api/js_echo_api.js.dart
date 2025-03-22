@@ -15,7 +15,7 @@ class _$JsEchoApi extends JavaScriptNamespaceInterface {
   @override
   void register() {
     registerFunction(_syn, functionName: 'syn');
-    registerFunction(_asyn, functionName: 'asyn');
+    registerFunction(_bb, functionName: 'bb');
   }
 
   @pragma('vm:entry-point')
@@ -27,10 +27,8 @@ class _$JsEchoApi extends JavaScriptNamespaceInterface {
   }
 
   @pragma('vm:entry-point')
-  void _asyn(dynamic args, CompletionHandler handler) {
-    debugPrint(
-      'Before calling asyn with annotation: isAsync - true  as - asyn',
-    );
+  void _bb(Map<String, String> args, CompletionHandler handler) {
+    debugPrint('Before calling asyn with annotation: isAsync - true  as - bb');
     _wrappedInstance.asyn(args, handler); // 调用被包装类的方法
     debugPrint('After calling asyn');
   }

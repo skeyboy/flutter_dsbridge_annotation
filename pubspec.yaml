@@ -14,6 +14,7 @@ dependencies:
   source_gen: ^2.0.0
   dsbridge_flutter: ^1.2.0
   build: ^2.4.2
+  flutter_dsbridge: ^0.0.3
 
 dev_dependencies:
   flutter_test:

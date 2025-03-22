@@ -1,5 +1,5 @@
 import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
-import 'package:dsbridge_flutter/dsbridge_flutter.dart';
+import 'package:flutter_dsbridge/flutter_dsbridge.dart';
 
 part 'js_echo_api.js.dart';
 
@@ -10,8 +10,8 @@ class JsEchoApi extends _$JsEchoApi {
     return args;
   }
 
-  @dsBridge(async: true)
-  void asyn(dynamic args, CompletionHandler handler) {
+  @dsBridge(async: true, as: 'bb')
+  void asyn(Map<String, String> args, CompletionHandler handler) {
     handler.complete(args);
   }
 }

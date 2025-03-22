@@ -2,6 +2,7 @@ import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:flutter_dsbridge_annotation/src/generator/code_info/code_generator.dart';
+import 'package:flutter_dsbridge_annotation/src/generator/code_info/params_code_generator.dart';
 import 'package:source_gen/source_gen.dart';
 
 class MethodCodeGenerator extends CodeGenerator {
@@ -21,11 +22,13 @@ class MethodCodeGenerator extends CodeGenerator {
 
   String? get methodName => method.name;
 
-  Iterable<String> get parameters => method.parameters.map((param) {
-    final paramName = param.name;
-    final paramType = param.type.getDisplayString();
-    return '$paramType $paramName';
-  });
+  Iterable<ParamsCodeGenerator> get parameters =>
+      method.parameters.map((param) {
+        final paramName = param.name;
+        final paramType = param.type.getDisplayString();
+        return ParamsCodeGenerator(name: paramName, type: paramType);
+      });
+
   bool get isAsync =>
       methodAnnotationObject?.getField('async')!.toBoolValue() ?? false;
   DartObject? get methodAnnotationObject =>

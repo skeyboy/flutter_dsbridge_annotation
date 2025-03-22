@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:dsbridge_flutter/dsbridge_flutter.dart';
+import 'package:flutter_dsbridge/flutter_dsbridge.dart';
 import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
 
 part 'js_api.js.dart';
@@ -28,7 +28,7 @@ class JsApi extends _$JsApi {
   }
 
   @dsBridge(async: true)
-  void callProgress(dynamic args, CompletionHandler handler) {
+  void callProgress(String args, CompletionHandler handler) {
     var i = 10;
     final timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (i == 0) {
