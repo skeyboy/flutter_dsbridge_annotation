@@ -21,3 +21,8 @@
 
 * fixe export cause `dart run build_runner build` error
 * change dependency to flutter_dsbridge
+
+## 0.0.6
+
+* fixe export cause `dart run build_runner build` error
+* change dependency to flutter_dsbridge

@@ -1,4 +1,4 @@
-import 'package:dsbridge_flutter/dsbridge_flutter.dart';
+import 'package:flutter_dsbridge/flutter_dsbridge.dart';
 import 'package:flutter_dsbridge_annotation/flutter_dsbridge_annotation.dart';
 part 'foo.js.dart';
 

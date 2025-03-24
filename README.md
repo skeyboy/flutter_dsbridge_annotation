@@ -18,7 +18,7 @@ DSBridge for Flutter is based on Flutter official [webview_flutter](https://pub.
    dependencies:
      ...
      flutter_dsbridge_annotation: x.y.z
-     dsbridge_flutter: x.y.z
+     flutter_dsbridge: x.y.z
    ```
   
 simple you can use this to add dependency:
